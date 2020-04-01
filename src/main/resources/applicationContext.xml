@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns="http://www.springframework.org/schema/beans"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--        扫描注入的bean包-->
+    <context:component-scan base-package="com.jony.jms.activemq.spring"/>
+
+    <!--    配置JMS 工厂,使用连接池工厂-->
+    <bean id="jmsFactory" class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">
+        <property name="connectionFactory">
+            <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+                <property name="brokerURL">
+                    <value>tcp://localhost:61616</value>
+                </property>
+            </bean>
+        </property>
+        <property name="maxConnections" value="100"/>
+    </bean>
+    <!--    配置连接池工厂-->
+    <bean id="cachingConnectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+        <!--    连接基础工厂   -->
+        <property name="targetConnectionFactory" ref="jmsFactory"/>
+        <property name="sessionCacheSize">
+            <value>1</value>
+        </property>
+    </bean>
+    <!--    配置模版-->
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <!--   模版使用缓存池工厂      -->
+        <property name="connectionFactory" ref="cachingConnectionFactory"/>
+        <property name="messageConverter">
+            <bean class="org.springframework.jms.support.converter.SimpleMessageConverter"></bean>
+        </property>
+    </bean>
+
+    <!--    配置queue 目的地-->
+    <bean id="testQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <!--     配置queue 名称-->
+        <constructor-arg name="name" value="spring-queue"></constructor-arg>
+    </bean>
+
+    <!--    配置topic-->
+    <bean id="testTopic" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg name="name" value="spring-topic"></constructor-arg>
+    </bean>
+
+    <!--    配置消费者监听器 通过注解进行配置-->
+
+    <!--    配置容器组合-针对消费者-->
+    <bean id="queueContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="cachingConnectionFactory"/>
+        <property name="destination" ref="testQueue"/>
+        <property name="messageListener" ref="queue-listener"/>
+    </bean>
+
+    <!--    配置主题容器组合-->
+    <bean id="topicContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="cachingConnectionFactory"/>
+        <property name="destination" ref="testTopic"/>
+        <property name="messageListener" ref="topic-listener"/>
+    </bean>
+</beans>
