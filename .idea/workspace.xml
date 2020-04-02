@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4da07b2-3089-488d-bfab-558bc78d26b7" name="Default Changelist" comment="" />
+    <list default="true" id="f4da07b2-3089-488d-bfab-558bc78d26b7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jony/jms/rocketmq/Consumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jony/jms/rocketmq/Producer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jony/jms/rocketmq/spring/Consumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jony/jms/rocketmq/spring/Producer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-rocket.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/RocketMqConsumerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/RocketMqTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jony/jms/rabbitmq/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jony/jms/rabbitmq/Consumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jony/jms/rabbitmq/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jony/jms/rabbitmq/Producer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-rabbit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-rabbit.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext-rabbit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext-rabbit.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jony/jms/rabbitmq/Consumer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jony/jms/rabbitmq/Consumer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jony/jms/rabbitmq/Consumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jony/jms/rabbitmq/Consumer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jony/jms/rabbitmq/Producer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jony/jms/rabbitmq/Producer.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,10 +29,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="application-spring" />
         <option value="Class" />
+        <option value="application-spring" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -33,7 +54,11 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectId" id="1ZpXq3B7wOAgGDTLZdVD8XZQUZj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../mybatis/one" />
@@ -51,6 +76,11 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -63,13 +93,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RabbitMqTest.send">
-    <configuration name="Consumer (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.jony.jms.rabbitmq.Consumer" />
+  <component name="RunManager" selected="Application.Producer (1)">
+    <configuration name="Consumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jony.jms.rocketmq.Consumer" />
       <module name="jms" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jony.jms.rabbitmq.*" />
+          <option name="PATTERN" value="com.jony.jms.rocketmq.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Producer (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jony.jms.rocketmq.Producer" />
+      <module name="jms" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jony.jms.rocketmq.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -90,34 +133,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WebProducer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.jony.jms.activemq.spring.webpush.WebProducer" />
-      <module name="jms" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.jony.jms.activemq.spring.webpush.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ActiveMqTest.testActive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RocketMqConsumerTest.testActive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jms" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ActiveMqTest" />
+      <option name="MAIN_CLASS_NAME" value="RocketMqConsumerTest" />
       <option name="METHOD_NAME" value="testActive" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RabbitMqTest.send" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RocketMqTest.testActive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jms" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RabbitMqTest" />
-      <option name="METHOD_NAME" value="send" />
+      <option name="MAIN_CLASS_NAME" value="RocketMqTest" />
+      <option name="METHOD_NAME" value="testActive" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -125,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RabbitMqTest.send" />
+        <item itemvalue="Application.Producer (1)" />
+        <item itemvalue="Application.Consumer" />
+        <item itemvalue="JUnit.RocketMqConsumerTest.testActive" />
+        <item itemvalue="JUnit.RocketMqTest.testActive" />
         <item itemvalue="Application.Producer" />
-        <item itemvalue="Application.Consumer (1)" />
-        <item itemvalue="Application.WebProducer" />
-        <item itemvalue="JUnit.ActiveMqTest.testActive" />
       </list>
     </recent_temporary>
   </component>
@@ -146,11 +176,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585537196969</updated>
-      <workItem from="1585537199036" duration="28853000" />
+      <workItem from="1585537199036" duration="38893000" />
+      <workItem from="1585792475633" duration="2482000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

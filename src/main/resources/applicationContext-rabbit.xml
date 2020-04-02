@@ -15,9 +15,13 @@
     <!--    配置连接工厂 -->
     <rabbit:connection-factory id="connectionFactory" host="127.0.0.1" port="5672" username="guest" password="guest"
                                virtual-host="/" requested-heartbeat="60"/>
+    <!--    配置一个转换器-->
+    <bean class="org.springframework.amqp.support.converter.Jackson2JsonMessageConverter" id="jackson2JsonMessageConverter"/>
     <!--  rabbit template  -->
     <rabbit:template id="rabbitTemplate" connection-factory="connectionFactory" exchange="topicExchange"
-                     routing-key="foo.xx"/>
+                     routing-key="foo.xx"
+                     message-converter="jackson2JsonMessageConverter"
+    />
     <!--    配置rabbitadmin-->
     <rabbit:admin connection-factory="connectionFactory"/>
     <!--    配置队列-->

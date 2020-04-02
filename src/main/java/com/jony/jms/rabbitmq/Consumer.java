@@ -25,9 +25,12 @@ public class Consumer {
             String queueName = channel.queueDeclare().getQueue();
 //            绑定队列,通过路由键将队列和交换器进行绑定
             channel.queueBind(queueName,"direct-exchange",routeKey);
+//            设置自动回执
             //        获取信息
             while (true){
 //                消费消息
+//                回应策略，是否自动回复，在接到消息后就会进行回复而不是等待消息处理完成
+//                设置为手动回执false，自动回执为true
                 boolean autoAck = false;
                 String consumerTag = "";
 //                添加监听获取消息
@@ -39,11 +42,14 @@ public class Consumer {
                         String routeKey = envelope.getRoutingKey();
                         envelope.getDeliveryTag();
                         envelope.getExchange();
+                        System.out.println(String.format("deliveryTag=%d,exchange=%s,routeKey=%s",envelope.getDeliveryTag(),envelope.getExchange(),envelope.getRoutingKey()));
 //                        properties 包涵数据属性信息
                         System.out.println(properties.getContentType());
 //                      输出body消息
                         System.out.println(new String(body,"UTF-8"));
 
+//                        确认消费应答
+                        channel.basicAck(envelope.getDeliveryTag(),false);
                     }
                 });
             }

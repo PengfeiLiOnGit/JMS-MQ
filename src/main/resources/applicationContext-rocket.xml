@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns="http://www.springframework.org/schema/beans"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--        扫描注入的bean包-->
+<!--    <context:component-scan base-package="com.jony.jms.rabbitmq.spring"/>-->
+
+    <bean id="rocketProducer" class="com.jony.jms.rocketmq.spring.Producer" init-method="init" destroy-method="destory">
+        <constructor-arg name="nameServerAddr" value="localhost:9876"/>
+        <constructor-arg name="producerGroupName" value="producer-group"/>
+    </bean>
+
+    <bean id="rocketConsumer" class="com.jony.jms.rocketmq.spring.Consumer" init-method="init" destroy-method="destory">
+        <constructor-arg name="nameServerAddr" value="localhost:9876"/>
+        <constructor-arg name="producerGroupName" value="consumer-group"/>
+        <constructor-arg name="topicName" value="topic-java"/>
+    </bean>
+</beans>
