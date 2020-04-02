@@ -18,6 +18,6 @@
     <bean id="orderConsumer" class="com.jony.jms.rocketmq.order.Consumer" init-method="init" destroy-method="destroy">
         <constructor-arg name="groupName" value="order-group"/>
         <constructor-arg name="nameSrvAddr" value="localhost:9876"/>
-        <constructor-arg name="topicName" value="topic_order"/>
+        <constructor-arg name="topicName" value="topic_order_test"/>
     </bean>
 </beans>

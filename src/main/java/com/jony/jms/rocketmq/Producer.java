@@ -11,7 +11,14 @@ import java.nio.charset.Charset;
 
 public class Producer {
 
+    /**
+     * 创建生产工厂
+     * 设置地址
+     * 设置其他参数
+     * 发送消息
+     */
     public void send() {
+
 //        创建生产者（指定生产者组）
         DefaultMQProducer producer = new DefaultMQProducer("group_producer");
 //        指定nameserver 地址 9876 默认端口号
@@ -22,7 +29,7 @@ public class Producer {
 //        发送消息
             for (int i = 0; i < 5; i++) {
                 Message message = new Message();
-                message.setTopic("topic_java");
+                message.setTopic("topic_java_test");
                 message.setTags("tage-a");
                 message.setBody(("RocketMQ Msg:"+i).getBytes(Charset.forName("UTF-8")));
                 //            返回发送消息的结果

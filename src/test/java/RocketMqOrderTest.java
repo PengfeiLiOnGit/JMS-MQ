@@ -40,7 +40,7 @@ public class RocketMqOrderTest {
 //编辑消息
                 Message message = new MessageExt();
 //                设置主题
-                message.setTopic("topic_order");
+                message.setTopic("topic_order_test");
 //                设置二级标签
                 message.setTags("tage-order"+status[j]);
 //                设置唯一标识key

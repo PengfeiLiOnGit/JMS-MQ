@@ -24,7 +24,7 @@ public class Consumer {
 //        开启连接
         try {
 //            订阅指定topic消息,第二个参数指的是次级标签
-            consumer.subscribe("topic_java", "*");
+            consumer.subscribe("topic_java_test", "*");
 //            设置获取信息顺序
             consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
             //        注解消费监听器
