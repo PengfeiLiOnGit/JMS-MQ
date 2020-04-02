@@ -2,23 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4da07b2-3089-488d-bfab-558bc78d26b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jony/jms/rocketmq/Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jony/jms/rocketmq/Producer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jony/jms/rocketmq/spring/Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jony/jms/rocketmq/spring/Producer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-rocket.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/RocketMqConsumerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/RocketMqTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jony/jms/rocketmq/order/Consumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jony/jms/rocketmq/order/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jony/jms/rocketmq/order/OrderMessageSelector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jony/jms/rocketmq/order/Producer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-rocket-order-consumer.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-rocket-order.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/RocketMqOrderConTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/RocketMqOrderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jony/jms/rabbitmq/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jony/jms/rabbitmq/Consumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jony/jms/rabbitmq/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jony/jms/rabbitmq/Producer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-rabbit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-rabbit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext-rabbit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext-rabbit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jony/jms/rabbitmq/Consumer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jony/jms/rabbitmq/Consumer$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jony/jms/rabbitmq/Consumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jony/jms/rabbitmq/Consumer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jony/jms/rabbitmq/Producer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jony/jms/rabbitmq/Producer.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="application-spring" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -61,7 +53,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../mybatis/one" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -80,6 +72,9 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ideaworkspace\maven\jms\src\main\resources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -93,7 +88,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Producer (1)">
+  <component name="RunManager" selected="JUnit.RocketMqOrderTest.testActive">
     <configuration name="Consumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jony.jms.rocketmq.Consumer" />
       <module name="jms" />
@@ -120,19 +115,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Producer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.jony.jms.rabbitmq.Producer" />
-      <module name="jms" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.jony.jms.rabbitmq.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RocketMqConsumerTest.testActive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jms" />
       <option name="PACKAGE_NAME" value="" />
@@ -143,10 +125,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RocketMqTest.testActive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RocketMqOrderConTest.testActive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jms" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RocketMqTest" />
+      <option name="MAIN_CLASS_NAME" value="RocketMqOrderConTest" />
+      <option name="METHOD_NAME" value="testActive" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RocketMqOrderTest.testActive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jms" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RocketMqOrderTest" />
       <option name="METHOD_NAME" value="testActive" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -155,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RocketMqOrderTest.testActive" />
+        <item itemvalue="JUnit.RocketMqOrderConTest.testActive" />
         <item itemvalue="Application.Producer (1)" />
         <item itemvalue="Application.Consumer" />
         <item itemvalue="JUnit.RocketMqConsumerTest.testActive" />
-        <item itemvalue="JUnit.RocketMqTest.testActive" />
-        <item itemvalue="Application.Producer" />
       </list>
     </recent_temporary>
   </component>
@@ -177,8 +169,17 @@
       <option name="presentableId" value="Default" />
       <updated>1585537196969</updated>
       <workItem from="1585537199036" duration="38893000" />
-      <workItem from="1585792475633" duration="2482000" />
+      <workItem from="1585792475633" duration="3289000" />
+      <workItem from="1585825274028" duration="4877000" />
     </task>
+    <task id="LOCAL-00001" summary="rocketmq">
+      <created>1585795033798</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585795033798</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,5 +197,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="rocketmq" />
+    <option name="LAST_COMMIT_MESSAGE" value="rocketmq" />
   </component>
 </project>

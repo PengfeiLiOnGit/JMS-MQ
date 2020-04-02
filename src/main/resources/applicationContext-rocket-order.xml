@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns="http://www.springframework.org/schema/beans"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/tx
+           http://www.springframework.org/schema/tx.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--    顺序过滤器-->
+    <bean id="orderMessageSelector" class="com.jony.jms.rocketmq.order.OrderMessageSelector"/>
+
+    <bean id="orderProducer" class="com.jony.jms.rocketmq.order.Producer" init-method="init" destroy-method="destroy">
+        <constructor-arg name="groupName" value="order-group"/>
+        <constructor-arg name="nameSrvAddr" value="localhost:9876"/>
+    </bean>
+</beans>
